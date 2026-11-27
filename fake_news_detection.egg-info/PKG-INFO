@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: fake-news-detection
+Version: 0.1.0
+Summary: Fake news detection with BERT, RoBERTa and DeBERTa on Fake & Real News
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: torch>=2.1
+Requires-Dist: transformers>=4.40
+Requires-Dist: datasets>=2.18
+Requires-Dist: accelerate>=0.28
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: pandas>=2.0
+Requires-Dist: numpy>=1.24
+Requires-Dist: sentencepiece
+Requires-Dist: tiktoken
+Requires-Dist: protobuf
+Requires-Dist: matplotlib>=3.7
+Requires-Dist: seaborn>=0.13
+Requires-Dist: tqdm
+Provides-Extra: notebook
+Requires-Dist: jupyter; extra == "notebook"
+Requires-Dist: ipykernel; extra == "notebook"
+Provides-Extra: dev
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Provides-Extra: demo
+Requires-Dist: streamlit>=1.30; extra == "demo"
+
+# fake-news-detection
+
+fake-news-detection/
+├── data/
+│   ├── raw/
+│   │   ├── isot/            # Fake.csv, True.csv
+│   │   └── liar/            # train.tsv, valid.tsv, test.tsv
+│   └── processed/           # الداتا بعد التنضيف والتقسيم
+├── notebooks/
+│   ├── 01_eda.ipynb
+│   ├── 02_baseline.ipynb
+│   └── 03_results_analysis.ipynb
+├── src/
+│   ├── __init__.py
+│   ├── data.py              # تحميل وتنضيف وتقسيم
+│   ├── train.py             # تدريب الموديلات
+│   ├── evaluate.py          # التقييم وcross-dataset
+│   └── utils.py             # seed، metrics، وغيرها
+├── outputs/
+│   ├── models/              # checkpoints
+│   ├── results/             # ملفات json بالنتايج
+│   └── figures/             # confusion matrix والرسومات
+├── configs/                 # (اختياري) إعدادات كل تجربة
+├── requirements.txt
+├── .gitignore
+└── README.md
