@@ -1,0 +1,5 @@
+{
+  "model": "tfidf_logreg",
+  "dataset": "fake_news_dataset",
+  "test_accuracy": 0.5019390581717451
+}
